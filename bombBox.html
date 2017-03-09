@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+	    margin: 0;
+   }
+.clearfix:after{
+	clear: both;
+	content: '';
+	display: block;
+}
+.clearfix{
+	zoom: 1;
+}
+#set {
+	margin-top: 16px;
+	width: 101px;
+	height: 35px;
+	background-color: #ff0000;
+	color: #fff;
+	border: none;
+	font-weight: 600;
+}
+
+#shade {
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color: #000;
+	display: none;
+}
+
+#dialogbox {
+	width: 540px;
+	height: 240px;
+	
+	background-color:#269ABC;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	left:0;
+	top:0;
+	margin:auto;
+	display: none;
+}
+#title{
+	width:100%;
+	height:50px;
+	background-color:#8A6D3B;
+	
+}
+.title-content{
+	font-size:20px;
+	padding-left:20px;
+	float:left;
+	line-height: 50px;
+}
+#goout{
+	width:50px;
+	height: 100%;
+	color:#fff;
+	font-size:26px;
+	line-height:50px;
+	padding-right:10px;
+	float:right;
+	text-align:center;
+	cursor: pointer;
+}
+#ensure,#giveup{width:60px; height:30px; border:none; background-color:#002952; color:#fff; }
+
+input {
+	cursor: pointer;
+}</style>
+	</head>
+	<body>   
+    <input type="button" value="点击设置" id="set"/>    
+    <div id="shade"></div>
+    <div id="dialogbox">
+        <div id="title" class="clearfix">
+        	<div class="title-content">对话框标题</div>
+        	<div id="goout">×</div>
+        </div>
+        <p>对话框内容</p>
+        <div class="box">
+            <input type="button" value="取消"  id="giveup"/>
+            <input type="button" value="确定" id="ensure"/>
+        </div>  
+</div>
+	</body>
+	<script>
+		var oShade=document.getElementById("shade");
+		var oSet=document.getElementById("set");
+		var oDialog=document.getElementById("dialogbox");
+		var oGiveup=document.getElementById("giveup");
+		var oEnsure=document.getElementById("ensure");
+		var oGoout=document.getElementById("goout");
+		function show(){
+			oShade.style.display="block";
+			oDialog.style.display="block";
+		};
+		function hide(){
+			oShade.style.display="none";
+			oDialog.style.display="none";
+		};	
+		oGiveup.onclick=hide;
+		oEnsure.onclick=hide;
+		oGoout.onclick=hide;
+		oSet.onclick=show;
+	</script>
+</html>
